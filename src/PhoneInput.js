@@ -7,7 +7,7 @@ export default class PhoneInput extends React.Component {
     title: 'Enter Your Phone Number'
   }
 
-  state = { phoneNumber: '' }
+  state = { countryCode: '+1', phoneNumber: '' }
 
   handleOnChangeText = text => {
     this.setState({ phoneNumber: text })
