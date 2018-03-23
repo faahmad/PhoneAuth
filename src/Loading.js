@@ -2,25 +2,15 @@ import React from 'react'
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native'
 import firebase from 'react-native-firebase'
 
-export default class Main extends React.Component {
+export default class Loading extends React.Component {
   componentDidMount() {
-    this.handleNavigation()
-  }
-
-  async handleNavigation() {
     // determine where to re-route the user depending on their auth state.
-    const user = await this.fetchCurrentUser()
-
-    this.props.navigation.navigate(user ? 'Main' : 'Auth')
-  }
-
-  fetchCurrentUser() {
-    // check firebase to see if the user is authenticated.
-
     // TODO firebase stuff...
 
-    // Faking auth check for now.
-    return new Promise(resolve => setTimeout(() => resolve(null), 3000))
+    // set user to null for now.
+    const user = null
+
+    this.props.navigation.navigate(user ? 'Main' : 'Auth')
   }
 
   render() {
